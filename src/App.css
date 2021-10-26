@@ -28,7 +28,6 @@
   color: #61dafb;
 }
 
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,4 +35,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.DraftEditor-root {
+  color: #000000;
+  /* border: 1px solid black; */
+  height: 10em;
+  padding: 2em;
+}
+
+.public-DraftEditor-content {
+  height: 4em;
+  max-width: 30em;
+  border: 1px solid rgb(175, 175, 175);
+  border-radius: 25px;
+  padding-inline: 2em;
+  padding-block: 1em;
 }

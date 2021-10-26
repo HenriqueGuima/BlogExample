@@ -40,6 +40,10 @@ export default function Dashboard() {
           </Button>
         </div>
       </Card>
+      <h2 className="text-center mb-4">List</h2>
+      <Link to="/users" className="btn btn-primary w-100 mt-3">
+        List
+      </Link>
     </React.Fragment>
   );
 }

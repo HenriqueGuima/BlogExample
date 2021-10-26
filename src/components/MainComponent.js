@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import UserCard from "./UserCard";
 import { Container } from "react-bootstrap";
+import UserCard from "./UserCard";
 
-const UserList = (props) => {
+const MainComponent = (props) => {
   console.log(props);
 
   const deleteUserHandler = (id) => {
@@ -20,19 +20,13 @@ const UserList = (props) => {
   //Button to add user
   return (
     <div className="main mt-5">
-      <h2>
-        User List{" "}
-        <Link to="/add">
-          <button className="btn btn-primary"> Add User </button>{" "}
-        </Link>{" "}
-      </h2>{" "}
       <div className="table-responsive"> {renderUserList} </div>{" "}
       <Container className="d-flex " style={{ minHeight: "50vh" }}></Container>
       <Link to="/dashboard">
-        <button className="btn btn-primary"> Back </button>{" "}
+        <button className="btn btn-primary"> Entrar </button>{" "}
       </Link>{" "}
     </div>
   );
 };
 
-export default UserList;
+export default MainComponent;

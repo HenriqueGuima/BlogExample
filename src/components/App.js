@@ -12,9 +12,11 @@ import UserList from "./UserList";
 import UserDetail from "./UserDetail";
 import EditUser from "./EditUser";
 import "../App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import ForgotPassword from "./ForgotPassword";
 import PrivateRoute from "./PrivateRoute";
+import "bootstrap/dist/css/bootstrap.min.css";
+import MainComponent from "./MainComponent";
 
 function App() {
   const LOCAL_STORAGE_KEY = "users";
@@ -69,20 +71,47 @@ function App() {
     getAllUsers();
   }, []);
   return (
-    <Container
-      className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "100vh" }}
-    >
-      <div className="w-100" style={{ maxWidth: "400px" }}>
+    <Container className="w-100" style={{ minHeight: "50vh" }}>
+      <div className="w-100">
         <Router>
           <AuthProvider>
             <Switch>
               {/* ##### ROUTES ##### */}
+              <Route
+                exact
+                path="/"
+                component={(
+                  props //Instead of render, has to be a component to make the route private
+                ) => (
+                  <MainComponent
+                    {...props}
+                    users={users}
+                    getUserId={removeUserHandler}
+                  />
+                )}
+              ></Route>
               <Route path="/signup" component={Signup}></Route>
               <Route path="/login" component={Login}></Route>
               <Route path="/forgot-password" component={ForgotPassword}></Route>
               {/* ##### PRIVATE ROUTES ##### */}
-              <PrivateRoute exact path="/" component={Dashboard}></PrivateRoute>
+              <PrivateRoute
+                exact
+                path="/dashboard"
+                component={Dashboard}
+              ></PrivateRoute>
+              {/* <PrivateRoute
+                path="/users"
+                exact
+                component={(
+                  props //Instead of render, has to be a component to make the route private
+                ) => (
+                  <UserList
+                    {...props}
+                    users={users}
+                    getUserId={removeUserHandler}
+                  />
+                )}
+              />{" "} */}
               <PrivateRoute
                 path="/users"
                 exact
@@ -95,7 +124,7 @@ function App() {
                     getUserId={removeUserHandler}
                   />
                 )}
-              />{" "}
+              />
               <PrivateRoute
                 path="/add"
                 component={(props) => (
