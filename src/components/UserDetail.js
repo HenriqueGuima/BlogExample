@@ -15,16 +15,16 @@ const UserDetail = (props) => {
         </div>{" "}
         <div className="content">
           <div className="header"> {name} </div>{" "}
-          <div className="description"> {type} </div>{" "}
-          <div className="description">
-            {" "}
-            {date} {time}
-          </div>{" "}
+          {/* <div className="description"> {type} </div>{" "} */}
           <div
             className="description"
             dangerouslySetInnerHTML={{ __html: props.location.state.user.text }}
           />
           {/* <div className="description"> {text} </div>{" "} */}
+        </div>{" "}
+        <div className="description">
+          {" "}
+          {date} {time}
         </div>{" "}
       </div>{" "}
       <div className="center-div">

@@ -4,7 +4,8 @@ import Icon from "@material-ui/core/Icon";
 
 //Sets what is going to be displayed in the user card
 const UserCard = (props) => {
-  const { id, name, type, img, date, time } = props.user;
+  const { id, name, text, img, date, time } = props.user;
+  let textFormatted = text.replace(/<[^>]*>/g, " ");
   return (
     <div className="container-fluid">
       <div className="row">
@@ -18,7 +19,7 @@ const UserCard = (props) => {
         </div>
         <div className="col-md-4" style={{ display: "contents", width: "6em" }}>
           <Link to={{ pathname: `/user/${id}`, state: { user: props.user } }}>
-            <div className="header"> {name} </div> <div> {type} </div>{" "}
+            <div className="header"> {name} </div> <div> {textFormatted} </div>{" "}
             <div className="header">
               {" "}
               {date} {time}{" "}

@@ -1,34 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ReactQuill from "react-quill";
 
 //User editing component
-//Missing current date to pass (or not?). Might not need it
 
 class EditUser extends React.Component {
   constructor(props) {
     super(props);
-    const { id, name, type, img, date, time } = props.location.state.user;
+    const { id, name, text, img, date, time } = props.location.state.user;
     this.state = {
       id,
       name,
-      type,
+      text,
       img,
       date,
       time,
     };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(value) {
+    this.setState({ text: value });
   }
 
   //State update
   update = (e) => {
     e.preventDefault();
-    if (this.state.name === "" || this.state.type === "") {
-      alert("ALl the fields are mandatory!");
+    if (this.state.name === "" || this.state.text === "") {
+      alert("All the fields are mandatory!");
       return;
     }
     this.props.updateUserHandler(this.state);
     this.setState({
       name: "",
-      type: "",
+      text: "",
       img: "",
       date: new Date() //Regular expressions to format the date time because some of them wouldn't display the correct time
         .toUTCString()
@@ -57,17 +62,11 @@ class EditUser extends React.Component {
             />{" "}
           </div>{" "}
           <div className="field">
-            <label> Type </label>{" "}
-            <input
-              type="text"
-              name="type"
-              placeholder="Type"
-              value={this.state.type}
-              onChange={(e) => this.setState({ type: e.target.value })}
-            />{" "}
+            <label> Text </label>{" "}
+            <ReactQuill value={this.state.text} onChange={this.handleChange} />
           </div>{" "}
           <div className="field">
-            <label> Img url </label>{" "}
+            <label> Featured Image </label>{" "}
             <input
               type="text"
               name="img"
