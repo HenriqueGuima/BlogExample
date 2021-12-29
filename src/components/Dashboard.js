@@ -4,7 +4,7 @@ import { Card, Button } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import UserList from "./UserList";
-import api from "../api/users";
+import api from "../api/posts";
 
 export default function Dashboard() {
   const [error, setError] = useState("");
@@ -31,18 +31,18 @@ export default function Dashboard() {
           {error && <Alert variant="danger">{error}</Alert>}
           <strong>Email:</strong> {currentUser.email}
           <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
-            Update Profile
+            Atualizar Perfil
           </Link>
         </Card.Body>
         <div className="w-100 text-center mt-2">
           <Button variant="link" onClick={handleLogout}>
-            Log Out
+            Sair
           </Button>
         </div>
       </Card>
-      <h2 className="text-center mb-4">List</h2>
-      <Link to="/users" className="btn btn-primary w-100 mt-3">
-        List
+      <h2 className="text-center mb-4">Posts</h2>
+      <Link to="/posts" className="btn btn-primary w-100 mt-3">
+        Posts
       </Link>
     </React.Fragment>
   );

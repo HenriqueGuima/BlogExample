@@ -1,0 +1,9 @@
+[debug] [2021-12-29T09:44:03.294Z] ----------------------------------------------------------------------
+[debug] [2021-12-29T09:44:03.298Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Henrique\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only hosting
+[debug] [2021-12-29T09:44:03.298Z] CLI Version:   9.22.0
+[debug] [2021-12-29T09:44:03.299Z] Platform:      win32
+[debug] [2021-12-29T09:44:03.299Z] Node Version:  v14.16.1
+[debug] [2021-12-29T09:44:03.302Z] Time:          Wed Dec 29 2021 09:44:03 GMT+0000 (Western European Standard Time)
+[debug] [2021-12-29T09:44:03.302Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-12-29T09:44:03.307Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]

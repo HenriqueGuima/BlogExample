@@ -18,9 +18,9 @@ export default function Login() {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      history.push("/dashboard");
+      history.push("/posts");
     } catch {
-      setError("Failed to log in");
+      setError("E-mail já registado ou password errada");
     }
 
     setLoading(false);

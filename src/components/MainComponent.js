@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
-import UserCard from "./UserCard";
+import PostCardOut from "./PostCardOut";
 
 const MainComponent = (props) => {
   console.log(props);
@@ -13,7 +13,7 @@ const MainComponent = (props) => {
   //Displays all users
   const renderUserList = props.users.map((user) => {
     return (
-      <UserCard user={user} clickHander={deleteUserHandler} key={user.id} />
+      <PostCardOut user={user} clickHander={deleteUserHandler} key={user.id} />
     );
   });
 

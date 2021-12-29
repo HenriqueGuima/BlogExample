@@ -21,15 +21,15 @@ const UserList = (props) => {
   return (
     <div className="main mt-5">
       <h2>
-        User List{" "}
+        Posts{" "}
         <Link to="/add">
-          <button className="btn btn-primary"> Add User </button>{" "}
+          <button className="btn btn-primary"> Adicionar post </button>{" "}
         </Link>{" "}
       </h2>{" "}
       <div className="table-responsive"> {renderUserList} </div>{" "}
       <Container className="d-flex " style={{ minHeight: "50vh" }}></Container>
       <Link to="/dashboard">
-        <button className="btn btn-primary"> Back </button>{" "}
+        <button className="btn btn-primary"> Voltar </button>{" "}
       </Link>{" "}
     </div>
   );

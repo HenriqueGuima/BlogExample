@@ -5,13 +5,13 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 //Sets what's going to be displayed in the more detailed page of each user
 //No date time here yet (maybe display when it was created)
 const UserDetail = (props) => {
-  const { name, type, img, date, time, text } = props.location.state.user;
+  const { name, img, date, time } = props.location.state.user;
   // const htmlPart = { text };
   return (
     <div className="main">
       <div className="ui card centered">
         <div className="image">
-          <img src={img} alt="user" />
+          <img src={img} alt="post" />
         </div>{" "}
         <div className="content">
           <div className="header"> {name} </div>{" "}
@@ -28,8 +28,8 @@ const UserDetail = (props) => {
         </div>{" "}
       </div>{" "}
       <div className="center-div">
-        <Link to="/users">
-          <button className="ui button blue center"> Back to User List </button>{" "}
+        <Link to="/posts">
+          <button className="ui button blue center"> Back to posts </button>{" "}
         </Link>{" "}
       </div>{" "}
     </div>

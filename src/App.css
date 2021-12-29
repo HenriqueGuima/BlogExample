@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  /* height: 40vmin; */
   pointer-events: none;
 }
 
@@ -37,18 +37,11 @@
   }
 }
 
-.DraftEditor-root {
-  color: #000000;
-  /* border: 1px solid black; */
-  height: 10em;
-  padding: 2em;
+.ql-container {
+  height: 20em;
 }
 
-.public-DraftEditor-content {
-  height: 4em;
-  max-width: 30em;
-  border: 1px solid rgb(175, 175, 175);
-  border-radius: 25px;
-  padding-inline: 2em;
-  padding-block: 1em;
+.ui.fluid.container {
+  width: 100%;
+  margin-left: 15em !important;
 }

@@ -7,11 +7,12 @@ import ReactQuill from "react-quill";
 class EditUser extends React.Component {
   constructor(props) {
     super(props);
-    const { id, name, text, img, date, time } = props.location.state.user;
+    const { id, name, text, desc, img, date, time } = props.location.state.user;
     this.state = {
       id,
       name,
       text,
+      desc,
       img,
       date,
       time,
@@ -27,13 +28,14 @@ class EditUser extends React.Component {
   update = (e) => {
     e.preventDefault();
     if (this.state.name === "" || this.state.text === "") {
-      alert("All the fields are mandatory!");
+      alert("Todos os campos são obrigatórios!");
       return;
     }
     this.props.updateUserHandler(this.state);
     this.setState({
       name: "",
       text: "",
+      desc: "",
       img: "",
       date: new Date() //Regular expressions to format the date time because some of them wouldn't display the correct time
         .toUTCString()
@@ -49,10 +51,10 @@ class EditUser extends React.Component {
   render() {
     return (
       <div className="ui main">
-        <h2> Edit User </h2>{" "}
+        <h2> Editar Utilizador </h2>{" "}
         <form className="ui form" onSubmit={this.update}>
           <div className="field">
-            <label> Name </label>{" "}
+            <label> Nome </label>{" "}
             <input
               type="text"
               name="name"
@@ -62,11 +64,21 @@ class EditUser extends React.Component {
             />{" "}
           </div>{" "}
           <div className="field">
-            <label> Text </label>{" "}
+            <label> Descrição </label>{" "}
+            <input
+              type="text"
+              name="desc"
+              placeholder="desc"
+              value={this.state.desc}
+              onChange={(e) => this.setState({ desc: e.target.value })}
+            />{" "}
+          </div>{" "}
+          <div className="field">
+            <label> Texto </label>{" "}
             <ReactQuill value={this.state.text} onChange={this.handleChange} />
           </div>{" "}
           <div className="field">
-            <label> Featured Image </label>{" "}
+            <label> Miniatura </label>{" "}
             <input
               type="text"
               name="img"
@@ -75,10 +87,10 @@ class EditUser extends React.Component {
               onChange={(e) => this.setState({ img: e.target.value })}
             />{" "}
           </div>{" "}
-          <button className="ui button blue"> Update </button>{" "}
+          <button className="ui button blue"> Editar </button>{" "}
         </form>{" "}
-        <Link to="/">
-          <button className="btn btn-primary"> Back </button>{" "}
+        <Link to="/posts">
+          <button className="btn btn-primary"> Voltar </button>{" "}
         </Link>{" "}
       </div>
     );
