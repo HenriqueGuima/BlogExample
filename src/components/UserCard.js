@@ -10,7 +10,7 @@ const UserCard = (props) => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-md-2">
+        <div className="col-sm-1">
           <img
             className="img-rounded"
             style={{ width: "6em" }}
@@ -18,8 +18,11 @@ const UserCard = (props) => {
             alt="user"
           />
         </div>
-        <div className="col-md-4" style={{ display: "contents", width: "6em" }}>
-          <Link to={{ pathname: `/post/${id}`, state: { user: props.user } }}>
+        <div className="col-md-4" style={{ display: "contents" }}>
+          <Link
+            to={{ pathname: `/post/${id}`, state: { user: props.user } }}
+            style={{ width: "20em" }}
+          >
             <div className="header"> {name} </div> <div> {textFormatted} </div>{" "}
             <div className="header">
               {" "}

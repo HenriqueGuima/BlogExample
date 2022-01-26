@@ -45,3 +45,15 @@
   width: 100%;
   margin-left: 15em !important;
 }
+
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+  margin-right: 20em !important;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: calc(var(--bs-gutter-x) * -0.5);
+  margin-left: calc(var(--bs-gutter-x) * -0.5);
+}

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ReactQuill from "react-quill";
 import Quill from "quill";
+import PropTypes from "prop-types";
 
 class AddUser extends React.Component {
   constructor(props) {
@@ -74,15 +75,15 @@ class AddUser extends React.Component {
 
   //Form fields
   render() {
-    Quill.register("modules/counter", function (quill, options) {
-      var container = document.querySelector("#counter");
-      quill.on("text-change", function () {
-        var text = quill.getText();
-        // There are a couple issues with counting words
-        // this way but we'll fix these later
-        container.innerText = text.split(/\s+/).length;
-      });
-    });
+    // Quill.register("modules/counter", function (quill, options) {
+    //   var container = document.querySelector("#counter");
+    //   quill.on("text-change", function () {
+    //     var text = quill.getText();
+    //     // There are a couple issues with counting words
+    //     // this way but we'll fix these later
+    //     container.innerText = text.split(/\s+/).length;
+    //   });
+    // });
 
     // var quill = new Quill("#editor-container", {
     //   modules: {
@@ -159,5 +160,46 @@ class AddUser extends React.Component {
     );
   }
 }
+
+// Editor.modules = {
+//   toolbar: [
+//     [{ header: "1" }, { header: "2" }, { font: [] }],
+//     [{ size: [] }],
+//     ["bold", "italic", "underline", "strike", "blockquote"],
+//     [
+//       { list: "ordered" },
+//       { list: "bullet" },
+//       { indent: "-1" },
+//       { indent: "+1" },
+//     ],
+//     ["link", "image", "video"],
+//     ["clean"],
+//   ],
+//   clipboard: {
+//     // toggle to add extra line breaks when pasting HTML:
+//     matchVisual: false,
+//   },
+// };
+
+// Editor.formats = [
+//   "header",
+//   "font",
+//   "size",
+//   "bold",
+//   "italic",
+//   "underline",
+//   "strike",
+//   "blockquote",
+//   "list",
+//   "bullet",
+//   "indent",
+//   "link",
+//   "image",
+//   "video",
+// ];
+
+// Editor.propTypes = {
+//   placeholder: PropTypes.string,
+// };
 
 export default AddUser;
